@@ -34,6 +34,54 @@ function powers(){
 }
 
 </script>
+<br>
+<form>
+    <input type="radio" id="add" name="Arthimetic" value="plus"   
+      checked >
+    <label for="add">+</label></br>
+  
+    <input type="radio" id="sub" name="Arthimetic" 
+       value="minus">
+    <label for="sub">-</label></br>
+  
+    <input type="radio" id="mul" name="Arthimetic"   
+       value="times">
+    <label for="mul">*</label></br>
+
+    <input type="radio" id="divi" name="Arthimetic"   
+    value="divide">
+ <label for="divi">/</label></br>
+
+    <input type="button" onclick="processRadio()" value="Calculate the value">
+  </form>
+  <p id="result">This text will be replaced</p>
+
+  <script>
+      function processRadio() {
+        base=document.getElementById("base").value
+    exponent=document.getElementById("exponent").value
+    add = document.getElementById("add").checked
+    sub = document.getElementById("sub").checked
+    mul = document.getElementById("mul").checked
+    divi = document.getElementById("divi").checked
+    out=document.getElementById("result")
+    if (add == true){
+        result= +base + +exponent
+    }
+    else if ( sub == true){
+        result= base - exponent
+    }
+    else if (mul == true){
+       result= base * exponent
+    }
+    else if (divi == true){
+        result= base / exponent
+    }
+    out=document.getElementById("result").innerHTML="The Result is : "+result
+
+      }
+  </script>
+
 
 </body>
 </html> 
