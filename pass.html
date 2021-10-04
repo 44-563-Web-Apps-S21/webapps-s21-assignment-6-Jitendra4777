@@ -28,43 +28,45 @@ function processPhrase(){
     //confirmed = confirm("Are these the values? "+secret+" and "+guess)
     
     out = document.getElementById("result")
-    if(secret==guess){
+    if(secret.toUpperCase()==guess.toUpperCase()){
         correct++;
+        out.innerHTML = "correct count :"+correct+"   wrong count : "+wrong
         alert("Access allowed");
         
     } else {
         wrong++;
+        out.innerHTML = "correct count :"+correct+"   wrong count : "+wrong
         alert("Access denied");
 
     }
-     
+    
  
-    out.innerHTML = "correct count :"+correct+"   wrong count : "+wrong
+    
 }
 </script>
 <br>
 <div class="container" >
-    <img src="images/lion-king-isolated-on-black-260nw-564253519.jpg" height="200" width="200" onclick="rotateImage()" id="image">
+    <img src="images/lion-king-isolated-on-black-260nw-564253519.jpg" height="200" width="200" onclick="newImage()" id="image">
     <script>
-        var currentImage=0;
-          function rotateImage(){
+        var usingImage=1;
+          function newImage(){
             
-              switch (currentImage) {
-                  case 0:
-                     document.getElementById("image").src="images/deer1.jpg";
-                      currentImage=1;
-                      break;
+              switch (usingImage) {
                   case 1:
-                  document.getElementById("image").src="images/king.jpg";
-                      currentImage=2;
+                     document.getElementById("image").src="images/deer1.jpg";
+                      usingImage=2;
                       break;
                   case 2:
+                  document.getElementById("image").src="images/king.jpg";
+                      usingImage=3;
+                      break;
+                  case 3:
                   document.getElementById("image").src="images/rabbit1.jpg";
-                      currentImage=3;
+                      usingImage=4;
                       break;
                   default :
                   document.getElementById("image").src="images/lion-king-isolated-on-black-260nw-564253519.jpg"
-                  currentImage=0;
+                  usingImage=1;
                   break;
               }
       
